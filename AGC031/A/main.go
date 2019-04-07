@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	var N int
@@ -8,23 +11,24 @@ func main() {
 	var S string
 	fmt.Scan(&S)
 
-	z := 1000000007
-
-	m := map[byte]int{}
+	m := map[byte]uint64{}
 	for i := 0; i < N; i++ {
-		_, e := m[S[i]]
+		index := S[i]
+		_, e := m[index]
 		if e {
-			m[S[i]]++
+			m[index]++
 		} else {
-			m[S[i]] = 1
+			m[index] = uint64(1)
 		}
 	}
 
-	res := 1
+	var res uint64 = 1
+	M := uint64(math.Pow10(9) + 7)
+
 	for _, v := range m {
-		res *= (1 + v)
+		res *= (uint64(1) + v)
+		res = res % M
 	}
-	res -= 1
-	fmt.Print(res % z)
+	fmt.Print(res - uint64(1))
 
 }
