@@ -17,28 +17,27 @@ int main() {
     cin >> c.at(i);
   }
 
-  vector<pair<int, int>> q(10000);
-  vector<int> q2(10000);
-  int top  = 0;
-  int last = 0;
+  queue<pair<int, int>> q;
+  queue<int> q2;
 
-  int x             = sx;
-  int y             = sy;
-  q.at(last).first  = x;
-  q.at(last).second = y;
-  last++;
+  int x = sx;
+  int y = sy;
+  q.push(make_pair(x, y));
+  q2.push(0);
+
   int cnt = 0;
-  vector<int> res;
+  int res = 1000000000;
 
-  while (last - top > 0) {
-    pair<int, int> next = q.at(top);
+  while (!q.empty()) {
+    pair<int, int> next = q.front();
     x                   = next.first;
     y                   = next.second;
-    cnt                 = q2.at(top);
-    top++;
+    cnt                 = q2.front();
+    q.pop();
+    q2.pop();
 
     if (x == gx && y == gy) {
-      res.push_back(cnt);
+      res = min(res, cnt);
       continue;
     }
 
@@ -49,33 +48,22 @@ int main() {
     cnt++;
 
     if (c.at(y).at(x + 1) == '.') {
-      q.at(last).first  = x + 1;
-      q.at(last).second = y;
-      q2.at(last)       = cnt;
-      last++;
+      q.push(make_pair(x + 1, y));
+      q2.push(cnt);
     }
     if (c.at(y).at(x - 1) == '.') {
-      q.at(last).first  = x - 1;
-      q.at(last).second = y;
-      q2.at(last)       = cnt;
-      last++;
+      q.push(make_pair(x - 1, y));
+      q2.push(cnt);
     }
     if (c.at(y + 1).at(x) == '.') {
-      q.at(last).first  = x;
-      q.at(last).second = y + 1;
-      q2.at(last)       = cnt;
-      last++;
+      q.push(make_pair(x, y + 1));
+      q2.push(cnt);
     }
     if (c.at(y - 1).at(x) == '.') {
-      q.at(last).first  = x;
-      q.at(last).second = y - 1;
-      q2.at(last)       = cnt;
-      last++;
+      q.push(make_pair(x, y - 1));
+      q2.push(cnt);
     }
   }
-  int min = 1000000000;
-  for (int i = 0; i < res.size(); i++) {
-    if (min > res.at(i)) { min = res.at(i); }
-  }
-  cout << min << endl;
+
+  cout << res << endl;
 }
