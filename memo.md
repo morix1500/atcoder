@@ -109,5 +109,83 @@ C 1
 5 3 2 4 1 7 6 8
 
 10
-1 2 3 4 5 6 7 8 9  10
+1 2 3 4 5 6 7 8 9 10
 5 3 6 2 4 1 8 7 10 9
+
+10
+insert 30
+insert 88
+insert 12
+insert 1
+insert 20
+find 12
+insert 17
+insert 25
+find 16
+print
+
+18
+insert 8
+insert 2
+insert 3
+insert 7
+insert 22
+insert 1
+find 1
+find 2
+find 3
+find 4
+find 5
+find 6
+find 7
+find 8
+print
+delete 3
+delete 7
+print
+
+
+5
+7 8 1 2 3
+
+10
+1 2 3 4  5  6 7  8  9 10 
+4 1 3 2  16 9 10 14 8 7
+
+4 1 3 14 16 9 10 2 8 7
+4 1 1014 16 9 3  2 8 7
+4 161014 1  9 3  2 8 7
+4 161014 7  9 3  2 8 1
+164 1014 7  9 3  2 8 1
+161410 4 7  9 3  2 8 1
+
+insert 8
+insert 2
+extract
+insert 10
+extract
+insert 11
+extract
+extract
+end
+
+012345
+112358
+
+
+3
+abcbdab
+bdcaba
+abc
+abc
+abc
+bc
+
+
+6
+30 35
+35 15
+15 5
+5 10
+10 20
+20 25
