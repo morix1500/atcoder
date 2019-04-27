@@ -1,28 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
+static const int MAX = 100000;
+static const int NIL = -1;
 
 int n, m;
+vector<int> color(MAX, NIL);
+vector<vector<int>> M(MAX);
 
-bool frend(vector<vector<int>> &M, vector<int> &memo, int i, int t) {
-  if (memo[i] == 1) return false;
-  for (int z = 0; z < n; z++) {
-    if (M[i][z] == 0) continue;
-    if (M[i][z] == 1 && z == t) return true;
-    memo[i] = 1;
-    if (frend(M, memo, z, t)) { return true; }
+void dfs(int i, int id) {
+  int size = M[i].size();
+  color[i] = id;
+  for (int j = 0; j < size; j++) {
+    if (color[M[i][j]] == NIL) {
+      color[M[i][j]] = id;
+      dfs(M[i][j], id);
+    }
   }
-  return false;
+}
+
+void assignColor() {
+  int id = 1;
+  for (int i = 0; i < n; i++) {
+    if (color[i] == NIL) dfs(i, id++);
+  }
 }
 
 int main() {
   cin >> n >> m;
-  vector<vector<int>> M(n, vector<int>(n));
 
   for (int i = 0; i < m; i++) {
     int id, f;
     cin >> id >> f;
-    M[id][f] = 1;
-    M[f][id] = 1;
+    M[id].push_back(f);
+    M[f].push_back(id);
   }
   int qn;
   cin >> qn;
@@ -31,10 +41,10 @@ int main() {
     cin >> q[i][0] >> q[i][1];
   }
 
+  assignColor();
+
   for (int i = 0; i < qn; i++) {
-    vector<int> memo(n);
-    bool res = frend(M, memo, q[i][0], q[i][1]);
-    if (res) {
+    if (color[q[i][0]] == color[q[i][1]]) {
       cout << "yes" << endl;
     } else {
       cout << "no" << endl;
