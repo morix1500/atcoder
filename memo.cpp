@@ -46,3 +46,22 @@ vector<int> eratosthenes() {
   }
   return is_prime;
 }
+
+// 階乗
+int factorial(int n) {
+  if (n == 0) return 1;
+  return n * factorial(n - 1);
+}
+
+// 順列 permutation: falseなら組み合わせ
+int combination(int n, int r, bool permutation) {
+  if (n <= 1) return n;
+  int p   = factorial(n) / factorial(n - r);
+  int res = p;
+  if (!permutation) { res /= factorial(r); }
+  return res;
+}
+
+// 組み合わせ(2通り選ぶ場合)
+int num = 3;
+int n   = num * (num - 1) / 2;
