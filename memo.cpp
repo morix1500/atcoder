@@ -2,6 +2,9 @@
 using namespace std;
 typedef long long ll;
 
+int int32num = (1 << 21);
+ll int64num  = (1LL << 60);
+
 // 最大公約数
 int gcd(int a, int b) {
   if (b == 0) return a;
