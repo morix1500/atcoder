@@ -99,3 +99,5 @@ int num = ceil(10.0);
 int num = floor(10.0);
 // 四捨五入
 int num = round(10.0);
+// 平方根
+int num = sqrt(num);
