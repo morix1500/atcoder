@@ -92,3 +92,10 @@ vector<int> decompositPrime(int num) {
   // cout << endl;
   return arr;
 }
+
+// 切り上げ
+int num = ceil(10.0);
+// 切り捨て(デフォルト)
+int num = floor(10.0);
+// 四捨五入
+int num = round(10.0);
