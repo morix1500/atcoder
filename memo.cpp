@@ -68,3 +68,27 @@ int combination(int n, int r, bool permutation) {
 // 組み合わせ(2通り選ぶ場合)
 int num = 3;
 int n   = num * (num - 1) / 2;
+
+// 総和
+int n = num * (num + 1) / 2;
+
+// 素因数分解
+vector<int> decompositPrime(int num) {
+  int a = 2;
+  vector<int> arr;
+  while (num >= a * a) {
+    if (num % a == 0) {
+      arr.push_back(a);
+      num /= a;
+    } else {
+      a++;
+    }
+  }
+  arr.push_back(num);
+  // for (int i = 0; i < arr.size(); i++) {
+  //  cout << arr[i] << " ";
+  //}
+
+  // cout << endl;
+  return arr;
+}
