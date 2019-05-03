@@ -5,6 +5,12 @@ typedef long long ll;
 int int32num = INT_MAX;
 ll int64num  = LLONG_MAX;
 
+// YES/NO
+void yesorno() {
+  // aa
+  cout << (true ? "YES\n" : "NO\n");
+}
+
 // 10の9乗 + 7
 int m = 1000000007;
 
@@ -118,4 +124,13 @@ void oomozi() {
 void replace_all() {
   string s = "hoge,hoge";
   replace(s.begin(), s.end(), ',', ' ');
+}
+
+// 文字列 全置換
+void replaceAll(string &str, string from, string to) {
+  int pos = str.find(from);
+  if (pos == -1) return;
+
+  str.replace(pos, from.size(), to);
+  replaceAll(str, from, to);
 }
