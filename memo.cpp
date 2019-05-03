@@ -2,8 +2,11 @@
 using namespace std;
 typedef long long ll;
 
-int int32num = (1 << 21);
-ll int64num  = (1LL << 60);
+int int32num = INT_MAX;
+ll int64num  = LLONG_MAX;
+
+// 10の9乗 + 7
+int m = 1000000007;
 
 // 最大公約数
 int gcd(int a, int b) {
