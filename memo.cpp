@@ -101,3 +101,12 @@ int num = floor(10.0);
 int num = round(10.0);
 // 平方根
 int num = sqrt(num);
+
+void oomozi() {
+  // 小文字 -> 大文字
+  string str = "hoge";
+  char(str[0] - ('a' - 'A'));
+  // 大文字 -> 小文字
+  string str2 = "HOGE";
+  char(str2[0] - ('A' - 'a'));
+}
