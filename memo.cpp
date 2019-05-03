@@ -113,3 +113,9 @@ void oomozi() {
   string str2 = "HOGE";
   char(str2[0] - ('A' - 'a'));
 }
+
+// 文字列 全置換
+void replace_all() {
+  string s = "hoge,hoge";
+  replace(s.begin(), s.end(), ',', ' ');
+}
