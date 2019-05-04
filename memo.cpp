@@ -134,3 +134,12 @@ void replaceAll(string &str, string from, string to) {
   str.replace(pos, from.size(), to);
   replaceAll(str, from, to);
 }
+
+// 直方体
+void tyokuhoutai() {
+  // 体積
+  int tate = 1, yoko = 1, oku = 1;
+  cout << tate * yoko * oku;
+  // 表面積
+  cout << 2 * ((tate * yoko) + (yoko * oku) + (tate * oku));
+}
