@@ -149,3 +149,24 @@ void floatDouble() {
   double num = 1.0;
   cout << fixed << setprecision(7) << num * M_PI << endl;
 }
+
+// 10進数から2進数
+string binaryStr(int bina) {
+  string ans = "";
+  for (int i = 0; bina > 0; i++) {
+    ans  = ans + to_string(bina % 2);
+    bina = bina / 2;
+  }
+  reverse(ans.begin(), ans.end());
+  return ans;
+}
+
+// 10進数から2進数（整数）
+int binary(int bina) {
+  int ans = 0;
+  for (int i = 0; bina > 0; i++) {
+    ans  = ans + (bina % 2) * pow(10, i);
+    bina = bina / 2;
+  }
+  return ans;
+}
