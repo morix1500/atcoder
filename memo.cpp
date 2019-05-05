@@ -143,3 +143,9 @@ void tyokuhoutai() {
   // 表面積
   cout << 2 * ((tate * yoko) + (yoko * oku) + (tate * oku));
 }
+
+// 浮動小数点の桁数指定の標準出力
+void floatDouble() {
+  double num = 1.0;
+  cout << fixed << setprecision(7) << num * M_PI << endl;
+}
