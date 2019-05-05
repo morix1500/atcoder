@@ -161,6 +161,13 @@ string binaryStr(int bina) {
   return ans;
 }
 
+// 2進数 文字列マッチ
+void binaryMatch(int num) {
+  string b  = binaryStr(num);
+  string bi = binaryStr(num);
+  if (b[b.size() - bi.size()] == '1') { cout << "match" << endl; }
+}
+
 // 10進数から2進数（整数）
 int binary(int bina) {
   int ans = 0;
