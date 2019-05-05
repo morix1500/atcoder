@@ -5,6 +5,12 @@ typedef long long ll;
 int int32num = INT_MAX;
 ll int64num  = LLONG_MAX;
 
+// ゼロ埋め
+void zeroume() {
+  int h = 23, m = 59, s = 59;
+  printf("%02d:%02d:%02d\n", h, m, s);
+}
+
 // YES/NO
 void yesorno() {
   // aa
