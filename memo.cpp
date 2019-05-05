@@ -124,6 +124,8 @@ void oomozi() {
   // 大文字 -> 小文字
   string str2 = "HOGE";
   char(str2[0] - ('A' - 'a'));
+  // 全部小文字
+  transform(str.begin(), str.end(), str.begin(), ::tolower);
 }
 
 // 文字列 全置換
