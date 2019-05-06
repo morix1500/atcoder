@@ -16,6 +16,11 @@ void yesorno() {
   // aa
   cout << (true ? "YES\n" : "NO\n");
 }
+// 検索
+void arrayFind() {
+  vector<char> ch = {'a'};
+  auto ite        = find(ch.begin(), ch.end(), m);
+}
 
 // 10の9乗 + 7
 int m = 1000000007;
