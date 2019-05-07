@@ -190,3 +190,12 @@ int binary(int bina) {
   }
   return ans;
 }
+
+// 時間計測
+void time() {
+  chrono::system_clock::time_point start, end;
+  start = chrono::system_clock::now();
+  end   = chrono::system_clock::now();
+  double elasped =
+      chrono::duration_cast<chrono::milliseconds>(end - start).count();
+}
