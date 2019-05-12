@@ -167,8 +167,9 @@ void floatDouble() {
 string binaryStr(int bina) {
   string ans = "";
   for (int i = 0; bina > 0; i++) {
-    ans  = ans + to_string(bina % 2);
-    bina = bina / 2;
+    int b = bina % 2;
+    ans   = ans + to_string(b);
+    bina  = (bina - b) / 2;
   }
   reverse(ans.begin(), ans.end());
   return ans;
@@ -198,4 +199,17 @@ void time() {
   end   = chrono::system_clock::now();
   double elasped =
       chrono::duration_cast<chrono::milliseconds>(end - start).count();
+}
+
+// 約数列挙
+vector<int> divisor(int n) {
+  vector<int> ret;
+  for (int i = 1; i * i <= n; i++) {
+    if (n % i == 0) {
+      ret.push_back(i);
+      if (i * i != n) ret.push_back(n / i);
+    }
+  }
+  sort(begin(ret), end(ret));
+  return (ret);
 }
