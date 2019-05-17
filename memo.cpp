@@ -213,3 +213,10 @@ vector<int> divisor(int n) {
   sort(begin(ret), end(ret));
   return (ret);
 }
+
+// 中央値
+void median(vector<int> b) {
+  sort(b.begin(), b.end());
+  int m      = b.size() / 2;
+  int median = b.size() % 2 == 0 ? (b[m] + b[m - 1]) / 2 : b[m];
+}
