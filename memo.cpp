@@ -220,3 +220,15 @@ void median(vector<int> b) {
   int m      = b.size() / 2;
   int median = b.size() % 2 == 0 ? (b[m] + b[m - 1]) / 2 : b[m];
 }
+
+// 二分探索
+void binary_search(int key) {
+  vector<int> A = {1, 2, 3, 4, 5};
+
+  // key以上のイテレータを取得(Keyが見つからない場合は配列の最後のイテレータになる)
+  auto ite = lower_bound(A.begin(), A.end(), key);
+  // -- index取得
+  int index1 = ite - A.begin();
+  // -- 末尾取得
+  int index2 = A.end() - ite;
+}
