@@ -31,6 +31,9 @@ int gcd(int a, int b) {
   return gcd(b, a % b);
 }
 
+// 最小公倍数
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
+
 // 配列出力
 void arrayOutput(vector<int> arr) {
   for (int i = 0; i < arr.size(); i++) {
