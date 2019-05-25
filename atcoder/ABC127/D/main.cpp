@@ -17,21 +17,16 @@ int main() {
   sort(A.begin(), A.end());
   sort(BC.begin(), BC.end(), greater<pair<ll, ll>>());
 
-  ll sum = 0;
+  ll sum    = 0;
+  int index = 0;
   for (int i = 0; i < n; i++) {
-    int size = BC.size();
-    for (int j = 0; j < size; j++) {
-      if (BC[j].second == 0) continue;
-      if (A[i] < BC[j].first) {
-        A[i] = BC[j].first;
-        BC[j].second--;
-        if (BC[j].second == 0) {
-          BC.erase(BC.begin() + j);
-          j--;
-        }
-      }
+    if (BC.size() > index && A[i] < BC[index].first) {
+      sum += BC[index].first;
+      BC[index].second--;
+      if (BC[index].second == 0) index++;
+    } else {
+      sum += A[i];
     }
-    sum += A[i];
   }
   cout << sum << endl;
 }
