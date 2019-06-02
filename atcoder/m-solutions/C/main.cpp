@@ -23,5 +23,5 @@ int main() {
   ll tmp = 1 / (sum / 100.0);
   cout << tmp % M << endl;
 
-  cout << (312500008 % M * 36 % M) % M << endl;
+  cout << (312500008 * 36) % M << endl;
 }
