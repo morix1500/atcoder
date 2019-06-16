@@ -38,6 +38,15 @@ int main() {
     }
     cout << mn - m[0] << endl;
     ope.push_back(make_pair(mn, m[0]));
+  } else {
+    // マイナス側もプラス側も一つ残す
+    // ひとつ残るまでマイナスのあまりはプラスに
+    // プラスのあまりはマイナスに
+    int z = p[p.size() - 1];
+    for (int i = 0; i < m.size() - 1; i++) {
+      z = z - m[i];
+      ope.push_back(make_pair(z, m[i]));
+    }
   }
 
   for (int i = 0; i < ope.size(); i++) {
