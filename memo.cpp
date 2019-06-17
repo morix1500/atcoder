@@ -235,3 +235,24 @@ void binary_search(int key) {
   // -- 末尾取得
   int index2 = A.end() - ite;
 }
+
+// 文字列分割
+vector<string> split(string s, char del) {
+  int first = 0;
+  int last  = s.find_first_of(del);
+  vector<string> res;
+
+  if (last == string::npos) {
+    res.push_back(s);
+    return res;
+  }
+
+  while (first < s.size()) {
+    string subStr(s, first, last - first);
+    res.push_back(subStr);
+    first = last + 1;
+    last  = s.find_first_of(del, first);
+    if (last == string::npos) { last = s.size(); }
+  }
+  return res;
+}
