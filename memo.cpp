@@ -89,7 +89,7 @@ int combination(int n, int r, bool permutation) {
   return res;
 }
 
-// 順列 mod 100000007 を考える場合
+// 組み合わせ mod 100000007 を考える場合
 ll f[101010];
 void factInit() {
   f[0] = 1;
